@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.trendingrepositories.ui.home.DateType" />
+
+        <variable
+            name="dateType"
+            type="DateType" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_button"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_date_type"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintBottom_toBottomOf="@+id/save_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/save_button"
+            tools:layout_editor_absoluteX="16dp">
+
+            <RadioGroup
+                android:id="@+id/filter_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <include
+                    android:id="@+id/lastDayButton"
+                    layout="@layout/filter_item_view"
+                    app:isChecked="@{dateType == DateType.LAST_DAY}"
+                    app:typeName='@{@string/last_day}' />
+
+                <include
+                    android:id="@+id/lastWeekButton"
+                    layout="@layout/filter_item_view"
+                    app:isChecked="@{dateType == DateType.LAST_WEEK}"
+                    app:typeName='@{@string/last_week}' />
+
+                <include
+                    android:id="@+id/lastMonthButton"
+                    layout="@layout/filter_item_view"
+                    app:isChecked="@{dateType == DateType.LAST_MONTH}"
+                    app:typeName='@{@string/last_month}' />
+            </RadioGroup>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

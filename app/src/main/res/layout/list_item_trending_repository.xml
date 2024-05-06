@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="showDeleteAction"
+            type="boolean" />
+
+        <variable
+            name="item"
+            type="com.example.trendingrepositories.ui.trendingrepositories.models.TrendingRepositoryItem" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="3dp"
+        app:cardElevation="5dp"
+        android:outlineAmbientShadowColor="@color/gray_b7"
+        android:outlineSpotShadowColor="@color/gray_b7"
+        app:strokeWidth="0dp"
+        tools:ignore="UnusedAttribute">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:image="@{item.avatar}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:placeholder="@{@drawable/ic_github}"
+                tools:ignore="ContentDescription,MissingConstraints"
+                tools:src="@drawable/ic_launcher_background" />
+
+            <ImageView
+                android:id="@+id/addToFavourite"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                visibleGone="@{safeUnbox(!showDeleteAction)}"
+                android:src="@{item.selected ? @drawable/ic_selected_bookmark : @drawable/ic_unselected_bookmark}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout"
+                app:tint="@color/yellow"
+                tools:ignore="ContentDescription,MissingConstraints"
+                tools:src="@drawable/ic_selected_bookmark" />
+
+            <ImageView
+                android:id="@+id/deleteImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_delete"
+                visibleGone="@{safeUnbox(showDeleteAction)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout"
+                app:tint="@color/red"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@+id/addToFavourite"
+                app:layout_constraintStart_toEndOf="@+id/avatar"
+                app:layout_constraintTop_toTopOf="@+id/avatar">
+
+                <TextView
+                    android:id="@+id/repository_name_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.name}"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    tools:text="Lorem Ipsum" />
+
+                <TextView
+                    android:id="@+id/author_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/gray_48"
+                    tools:text="Lorem Ipsum" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/materialCardView"
+                    visibleGone="@{item.language != null}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@color/gray_f2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayout"
+                    app:layout_constraintTop_toTopOf="@+id/avatar"
+                    app:strokeWidth="0dp">
+
+                    <TextView
+                        android:id="@+id/repository_language"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:padding="8dp"
+                        android:text="@{item.language}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/black"
+                        tools:text="Java Java" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TextTagView">
+        <attr name="tag_title" format="integer"/>
+        <attr name="tag_text_color" format="color" />
+        <attr name="tag_background_color" format="color" />
+        <attr name="tag_corner_radius" format="dimension" />
+        <attr name="tag_content_padding" format="dimension" />
+    </declare-styleable>
+</resources>

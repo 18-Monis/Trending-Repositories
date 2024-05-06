@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Trending Repositories</string>
+    <string name="search">Search</string>
+    <string name="author">Author</string>
+    <string name="retry">Retry</string>
+    <string name="something_wrong_is_happened_please_try_again">Something wrong is happened, Please try again</string>
+    <string name="trending_repositories">Trending Repositories</string>
+    <string name="favourite">Favourite</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="repository_description">Repository Description</string>
+    <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="created_at"><![CDATA[Created at <b>%s</b>]]></string>
+    <string name="created_by"><![CDATA[Created by <b>%s</b>]]></string>
+    <string name="trending_repository_details">Trending Repository Details</string>
+    <string name="no_internet_connection_message">Opps! you\'ve lost internet connection</string>
+    <string name="losing_internet_connection_message">Opps! It seems like you internet connection is unstable</string>
+    <string name="forks">Forks</string>
+    <string name="watchers">Watchers</string>
+    <string name="filter">Filter</string>
+    <string name="last_day">Last Day</string>
+    <string name="last_week">Last Week</string>
+    <string name="last_month">Last Month</string>
+    <string name="select_date_type">Select date type</string>
+    <string name="save">Save</string>
+</resources>

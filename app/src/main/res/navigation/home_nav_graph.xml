@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/trendingRepositories">
+    <fragment
+        android:id="@+id/trendingRepositories"
+        android:name="com.example.trendingrepositories.ui.trendingrepositories.TrendingRepositoriesFragment"
+        android:label="@string/trending_repositories"
+        tools:layout="@layout/fragment_trending_repositories" >
+        <action
+            android:id="@+id/action_trendingRepositories_to_trendingRepositoryDetails"
+            app:destination="@id/trendingRepositoryDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteRepositories"
+        android:name="com.example.trendingrepositories.ui.favouriterepositories.FavouriteRepositoriesFragment"
+        android:label="@string/favourite"
+        tools:layout="@layout/fragment_favourite_repositories" >
+        <action
+            android:id="@+id/action_favouriteRepositories_to_trendingRepositoryDetails"
+            app:destination="@id/trendingRepositoryDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/trendingRepositoryDetails"
+        android:name="com.example.trendingrepositories.ui.trendingrepositorydetails.TrendingRepositoryDetailsFragment"
+        android:label="@string/trending_repository_details" >
+        <argument
+            android:name="trendingRepositoryItem"
+            app:argType="com.example.trendingrepositories.ui.trendingrepositories.models.TrendingRepositoryItem" />
+    </fragment>
+</navigation>
