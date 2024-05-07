@@ -16,6 +16,7 @@ Technical choices:
 - Support Different Screens - Smallest Width
 - SVG Icons
 - Kotlin Extensions
+- Splash screen API.
 
 What I missed ? 
 I tried my best to include all the features inside the app. but there are a few of implementation to make some feature to be working correctly like :
