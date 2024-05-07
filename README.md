@@ -19,11 +19,11 @@ Technical choices:
 - Splash screen API.
 
 What I missed ? 
-I tried my best to include all the features inside the app. but there are a few of implementation to make some feature to be working correctly like :
+I tried my best to include all the features inside the app. but there are a few implementation to make some features working correctly like :
 - Error Handling of Paging
-- Generate the different dimens of texts size, padding, margin, height and width for all the screen sizes inside the match dimens file.
+- Generate the different dimens of texts sizes, padding, margins, height and width for all the screens sizes inside the match dimen file.
 - Clean Code to make the code more effeciant.
-- Bref Documentation for each peace of code in the app.
+- Brief Documentation for each piece of code in the app.
 - Replace LiveData with State & Shared Flow.
 - Clear the query of search view when the fragment is invisible for user.
 - Restoring search query after Process Death using SavedStateHandle in viewmodel.
