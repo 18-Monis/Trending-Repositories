@@ -24,6 +24,8 @@ I tried my best to include all the features inside the app. but there are a few 
 - Clean Code to make the code more effeciant.
 - Bref Documentation for each peace of code in the app.
 - Replace LiveData with State & Shared Flow.
+- Clear the query of search view.
+- Restoring search query after Process Death using SavedStateHandle in viewmodel.
 
 It is a wonderful opportunity to work with you, but I apologize for not working all the features due to work pressure,
 I wanted to show you the way I work and think about implementation for Android apps.
