@@ -75,9 +75,7 @@ class TrendingRepositoriesViewModel @Inject constructor(
     fun handlePassengersListState(loadState: CombinedLoadStates, itemCount: Int) {
         val currentState = loadState.source.refresh
 
-        // isLoading , errorLayout , passengersRecyclerview
         _isLoadingLiveData.value = currentState is LoadState.Loading
-        //_isPassengersListVisibleLiveData.value = currentState is LoadState.NotLoading
         _errorLiveData.value = currentState is LoadState.Error
 
 
@@ -86,8 +84,7 @@ class TrendingRepositoriesViewModel @Inject constructor(
             loadState.append.endOfPaginationReached &&
             itemCount < 1
         ) {
-            //_isPassengersListVisibleLiveData.value = false
-            //_isEmptyLiveData.value = true
+            // should create empty live data to indicate if the data is empty or not instead to show error.
             showError()
         } else {
             hideError()
